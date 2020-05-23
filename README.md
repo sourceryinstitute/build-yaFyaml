@@ -3,9 +3,12 @@ build-yaFyaml-stack
 
 This CMake project aims to build the following dependency tree:
 
-[yaFyaml]
+[yaFyaml] 
+|
 |__ [gftl]
+    |
     |__ [gftl-shared]
+
 
 This is a first experiment with CMAke superbuilds. The initial
 thought is to use the [Developer Build] pattern so that the
