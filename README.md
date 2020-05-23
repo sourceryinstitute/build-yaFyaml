@@ -1,19 +1,26 @@
 build-yaFyaml-stack
 ===================
 
+Overview
+--------
+
 This CMake project aims to build the following dependency tree:
 
-[yaFyaml] 
-|
-|__ [gftl]
-    |
-    |__ [gftl-shared]
+```
+yaFyaml
+|__ gftl
+    |__ gftl-shared
+```
+where
 
+* [yaFyaml] is a modern Fortran YAML API,
+* [gftl] is the Goddard Fortran Template Library, and
+* [gftl-shared] contains common gFTL containers of Fortran intrinsic types.
 
-This is a first experiment with CMAke superbuilds. The initial
+This is a first experiment with CMake superbuilds. The initial
 thought is to use the [Developer Build] pattern so that the
 superbuild is useful to the upstream projects.  As such, the
-packages built are all submodules and obtaining a useful copy
+packages built are all submodules so obtaining a useful copy
 of the current project requires a recursive clone.
 
 Downloading
