@@ -23,10 +23,14 @@ superbuild is useful to the upstream projects.  As such, the
 packages built are all submodules so obtaining a useful copy
 of the current project requires a recursive clone.
 
-Downloading
------------
+Downloading and Building
+--------------------------
 ```bash
 git clone --recursive git@github.com:sourceryinstitute/build-yaFyaml-stack
+mkdir -p build-yaFyaml-stack/build
+cd build-yaFyaml-stack/build
+cmake ..
+make
 ```
 
 [yaFyaml]: https://github.com:Goddard-Fortran-Ecosystem/yaFyaml
