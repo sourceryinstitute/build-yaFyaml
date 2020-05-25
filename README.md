@@ -9,7 +9,7 @@ This CMake project aims to build the following dependency tree:
 ```
 yaFyaml
 |__ gftl
-    |__ gftl-shared
+|__ gftl-shared
 ```
 where
 
