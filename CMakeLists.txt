@@ -5,27 +5,21 @@ include(ExternalProject)
 set(installDir ${CMAKE_CURRENT_BINARY_DIR}/install)
 
 ExternalProject_Add(gftl-shared
- GIT_REPOSITORY https://github.com/Goddard-Fortran-Ecosystem/gftl-shared
- GIT_TAG v1.0.7
- GIT_CONFIG advice.detachedHead=false
+ SOURCE_DIR ${PROJECT_SOURCE_DIR}/git-submodules/gftl-shared
  INSTALL_DIR ${installDir}
  CMAKE_ARGS -DCMAKE_INSTALL_PREFIX:PATH=<INSTALL_DIR>
             -DCMAKE_PREFIX_PATH:PATH=<INSTALL_DIR>
 )
 
 ExternalProject_Add(gftl
- GIT_REPOSITORY https://github.com/Goddard-Fortran-Ecosystem/gftl
- GIT_TAG v1.2.5
- GIT_CONFIG advice.detachedHead=false
+ SOURCE_DIR ${PROJECT_SOURCE_DIR}/git-submodules/gftl
  INSTALL_DIR ${installDir}
  CMAKE_ARGS -DCMAKE_INSTALL_PREFIX:PATH=<INSTALL_DIR>
             -DCMAKE_PREFIX_PATH:PATH=<INSTALL_DIR>
 )
 
 ExternalProject_Add(yaFyaml
- GIT_REPOSITORY https://github.com/Goddard-Fortran-Ecosystem/yaFyaml
- GIT_TAG v0.3.3
- GIT_CONFIG advice.detachedHead=false
+ SOURCE_DIR ${PROJECT_SOURCE_DIR}/git-submodules/yaFyaml
  INSTALL_DIR ${installDir}
  CMAKE_ARGS -DCMAKE_INSTALL_PREFIX:PATH=<INSTALL_DIR>
             -DCMAKE_PREFIX_PATH:PATH=<INSTALL_DIR>
