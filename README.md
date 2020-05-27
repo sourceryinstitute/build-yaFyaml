@@ -4,7 +4,7 @@ build-yaFyaml-stack
 Overview
 --------
 
-This CMake project aims to build the following dependency tree:
+This CMake project aims to build and test the following dependency tree:
 
 ```
 yaFyaml
@@ -29,8 +29,9 @@ Downloading, Building, and Testing
 git clone --recursive git@github.com:sourceryinstitute/build-yaFyaml-stack
 mkdir -p build-yaFyaml-stack/build
 cd build-yaFyaml-stack/build
+export FC=gfortran
 cmake ..
-make -j 8
+make -j -8
 ctest
 ```
 
