@@ -1,19 +1,14 @@
 program main
-   use yafyaml
+   use yafyaml, only : Parser, Configuration, FileStream
+   implicit none
 
-   type(Parser) :: p
-   type(Configuration) :: config
-   integer :: prime
-
+   type(Parser) p
+   type(Configuration) c
+   logical sanity
 
    p = Parser('core')
-   config = p%load(FileStream('input.json'))
+   c = p%load(FileStream('input.json'))
+   sanity = c%at('science')
 
-   !prime = config%at('prime')
-
-   !if (prime == 17) then
-   !   print*,'success'
-   !else
-   !   print*,'failure;  expected 17 but found ', prime
-   !end if
-end program main
+   if (sanity) print *,"Test passed"
+end program

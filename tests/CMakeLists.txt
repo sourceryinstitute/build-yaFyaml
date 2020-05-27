@@ -4,13 +4,14 @@ project(yaFyaml_tests
   LANGUAGES Fortran
 )
 
-find_package (GFTL REQUIRED)
-find_package (GFTL_SHARED REQUIRED VERSION 1.0.4)
+find_package(GFTL REQUIRED)
+find_package(GFTL_SHARED REQUIRED VERSION 1.0.4)
 find_package(YAFYAML REQUIRED)
+
+get_filename_component(barename ${CMAKE_Fortran_COMPILER} NAME)
 
 if(CMAKE_Fortran_COMPILER_ID MATCHES GNU)
   set(CMAKE_Fortran_FLAGS "${CMAKE_Fortran_FLAGS} -Wall -std=f2018")
-  get_filename_component(barename ${CMAKE_Fortran_COMPILER} NAME)
   if("${barename}" MATCHES gfortran)
     set(CMAKE_Fortran_FLAGS "${CMAKE_Fortran_FLAGS} -fcoarray=single")
   endif()
@@ -22,19 +23,20 @@ enable_testing()
 
 add_subdirectory(json-input)
 
-function(add_caf_test name num_images)
-  set(test_dir "${name}")
-  add_test(NAME "${name}"
-    COMMAND cafrun -n "${num_images}" "$<TARGET_FILE:test-${name}>"
-    WORKING_DIRECTORY "${test_dir}"
-  )
-  set_tests_properties(${name}
-     PROPERTIES PASS_REGULAR_EXPRESSION "Test passed."
-  )
-endfunction()
-
 foreach(test_name
   json-input
 )
-  add_caf_test("${test_name}" 2)
+  if(barename MATCHES caf)
+    set(launch_command "cafrun -n 2")
+  else()
+    set(launch_command "")
+  endif()
+
+  add_test(NAME "${test_name}"
+    COMMAND ${launch_command} "$<TARGET_FILE:test-${test_name}>"
+    WORKING_DIRECTORY "${test_name}"
+  )
+  set_tests_properties(${test_name}
+     PROPERTIES PASS_REGULAR_EXPRESSION "Test passed."
+  )
 endforeach()
