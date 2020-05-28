@@ -8,14 +8,14 @@ This CMake project aims to build and test the following dependency tree:
 
 ```
 yaFyaml
-|__ gftl
-|__ gftl-shared
+|-- gftl-shared
+    |-- gftl
 ```
 where
 
 * [yaFyaml] is a modern Fortran YAML API,
-* [gftl] is the Goddard Fortran Template Library, and
-* [gftl-shared] contains common gFTL containers of Fortran intrinsic types.
+* [gFTL-shared] contains common gFTL containers of Fortran intrinsic types.
+* [gFTL] is the Goddard Fortran Template Library, and
 
 This is a first experiment with CMake superbuilds. The idea is
 to use the [Developer Build] pattern so that the superbuild is

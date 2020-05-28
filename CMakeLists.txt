@@ -7,15 +7,15 @@ project(yaFyamlSuperbuild
 include(ExternalProject)
 set(installDir ${CMAKE_CURRENT_BINARY_DIR}/install)
 
-ExternalProject_Add(gftl_shared
- SOURCE_DIR ${PROJECT_SOURCE_DIR}/git-submodules/gftl-shared
+ExternalProject_Add(gFTL_shared
+ SOURCE_DIR ${PROJECT_SOURCE_DIR}/git-submodules/gFTL-shared
  INSTALL_DIR ${installDir}
  CMAKE_ARGS -DCMAKE_INSTALL_PREFIX:PATH=<INSTALL_DIR>
             -DCMAKE_PREFIX_PATH:PATH=<INSTALL_DIR>
 )
 
-ExternalProject_Add(gftl
- SOURCE_DIR ${PROJECT_SOURCE_DIR}/git-submodules/gftl
+ExternalProject_Add(gFTL
+ SOURCE_DIR ${PROJECT_SOURCE_DIR}/git-submodules/gFTL-shared/extern/gFTL
  INSTALL_DIR ${installDir}
  CMAKE_ARGS -DCMAKE_INSTALL_PREFIX:PATH=<INSTALL_DIR>
             -DCMAKE_PREFIX_PATH:PATH=<INSTALL_DIR>
@@ -26,7 +26,7 @@ ExternalProject_Add(yaFyaml
  INSTALL_DIR ${installDir}
  CMAKE_ARGS -DCMAKE_INSTALL_PREFIX:PATH=<INSTALL_DIR>
             -DCMAKE_PREFIX_PATH:PATH=<INSTALL_DIR>
- DEPENDS gftl gftl_shared
+ DEPENDS gFTL gFTL_shared
 )
 
 # Making the tests directory an external project ensures that it is
