@@ -18,7 +18,7 @@ program main
    c = p%load(FileStream('nested-objects.json'))
    dag%vertex%id = c%at('dag', 'vertex', 'id')
 
-   if (dag%vertex%id /= 1) error stop "Test failed"
+   if (dag%vertex%id /= 99) error stop "Test failed: dag.vertex.id wrong value."
 
    sync all
    if (this_image()==1) print *,"Test passed"
