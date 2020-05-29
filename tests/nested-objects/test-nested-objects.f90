@@ -12,7 +12,7 @@ program main
 
    p = Parser('core')
    c = p%load(FileStream('nested-objects.json'))
-   dag%node = c%at('dag.node')
+   dag%node = c%at('dag','node')
 
    if (dag%node /= 1) error stop "Test failed"
 
