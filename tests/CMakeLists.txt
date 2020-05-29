@@ -21,11 +21,12 @@ set(CMAKE_Fortran_MODULE_DIRECTORY "${PROJECT_BINARY_DIR}/mod")
 
 enable_testing()
 
-add_subdirectory(json-input)
 
 foreach(test_name
   json-input
+  nested-objects
 )
+  add_subdirectory("${test_name}")
   if(barename MATCHES caf)
     set(launch_command "cafrun" "-n" "2")
   else()
