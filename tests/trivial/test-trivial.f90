@@ -7,7 +7,7 @@ program main
    logical :: fauxnews=.true.
 
    p = Parser('core')
-   c = p%load(FileStream('input.json'))
+   c = p%load(FileStream('trivial.json'))
    fauxnews = c%at('fauxnews') ! this should overwrite fauxnews with .false.
 
    if (fauxnews) error stop "Test failed"

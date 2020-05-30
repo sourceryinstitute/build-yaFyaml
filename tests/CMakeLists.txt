@@ -23,9 +23,9 @@ enable_testing()
 
 
 foreach(test_name
-  json-input
-  nested-objects
+  trivial
   integer-array
+  nested-objects
   object-array
 )
   add_subdirectory("${test_name}")
