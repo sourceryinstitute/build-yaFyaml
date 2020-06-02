@@ -8,8 +8,8 @@ This CMake project aims to build and test the following dependency tree:
 
 ```
 yaFyaml
-|-- gftl-shared
-    |-- gftl
+|-- gFTL-shared
+    |-- gFTL
 ```
 where
 
@@ -36,6 +36,6 @@ ctest
 ```
 
 [yaFyaml]: https://github.com:Goddard-Fortran-Ecosystem/yaFyaml
-[gftl]: https://github.com:Goddard-Fortran-Ecosystem/gftl
-[gftl-shared]: https://github.com:Goddard-Fortran-Ecosystem/gftl-shared
+[gFTL]: https://github.com:Goddard-Fortran-Ecosystem/gFTL
+[gFTL-shared]: https://github.com:Goddard-Fortran-Ecosystem/gFTL-shared
 [Developer Build]: https://blog.kitware.com/cmake-superbuilds-git-submodules

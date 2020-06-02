@@ -4,13 +4,13 @@ program main
 
    type(Parser) p
    type(Configuration) c
-   logical :: fauxnews=.true.
+   integer, allocatable :: nodes(:)
 
    p = Parser('core')
-   c = p%load(FileStream('input.json'))
-   fauxnews = c%at('fauxnews') ! this should overwrite fauxnews with .false.
+   c = p%load(FileStream('integer-array.json'))
+   nodes = c%at('nodes')
 
-   if (fauxnews) error stop "Test failed"
+   if (any(nodes/=[1,2,3])) error stop "Test failed: wrong nodes values."
 
    sync all
    if (this_image()==1) print *,"Test passed"

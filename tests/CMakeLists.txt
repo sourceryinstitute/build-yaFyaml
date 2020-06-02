@@ -23,8 +23,10 @@ enable_testing()
 
 
 foreach(test_name
-  json-input
+  trivial
+  integer-array
   nested-objects
+  object-array
 )
   add_subdirectory("${test_name}")
   if(barename MATCHES caf)
