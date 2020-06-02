@@ -20,7 +20,7 @@ program main
   integer :: i, j
 
   p = Parser('core')
-  c = p%load(FileStream('nested-objects.json'))
+  c = p%load(FileStream('nested-object-array.json'))
   call c%get_node_at_selector(dag_vertices, 'dag', 'vertices')
 
   select type (dag_vertices)

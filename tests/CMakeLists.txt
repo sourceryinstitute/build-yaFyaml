@@ -25,8 +25,7 @@ enable_testing()
 foreach(test_name
   trivial
   integer-array
-  nested-objects
-  object-array
+  nested-object-array
 )
   add_subdirectory("${test_name}")
   if(barename MATCHES caf)
