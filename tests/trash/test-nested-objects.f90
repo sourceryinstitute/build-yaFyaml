@@ -2,8 +2,12 @@ program main
    use yafyaml, only : Parser, Configuration, FileStream
    implicit none
 
+   type vertex_t
+     integer :: id = -1
+   end type
+
    type dag_t
-     integer :: node = -1
+     type(vertex_t) vertex
    end type
 
    type(dag_t) dag
@@ -12,9 +16,9 @@ program main
 
    p = Parser('core')
    c = p%load(FileStream('nested-objects.json'))
-   dag%node = c%at('dag.node')
+   dag%vertex%id = c%at('dag', 'vertex', 'id')
 
-   if (dag%node /= 1) error stop "Test failed"
+   if (dag%vertex%id /= 99) error stop "Test failed: dag.vertex.id wrong value."
 
    sync all
    if (this_image()==1) print *,"Test passed"

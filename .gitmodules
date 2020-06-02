@@ -1,6 +1,6 @@
-[submodule "git-submodules/yaFyaml"]
-	path = git-submodules/yaFyaml
-	url = git@github.com:Goddard-Fortran-Ecosystem/yaFyaml
 [submodule "git-submodules/gFTL-shared"]
 	path = git-submodules/gFTL-shared
 	url = git@github.com:Goddard-Fortran-Ecosystem/gFTL-shared
+[submodule "git-submodules/yaFyaml"]
+	path = git-submodules/yaFyaml
+	url = git@github.com:Goddard-Fortran-Ecosystem/yaFyaml
